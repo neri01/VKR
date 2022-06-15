@@ -1,0 +1,41 @@
+version: '2'
+services:
+    proxy:
+        image: jwilder/nginx-proxy:latest
+        container_name: proxy
+        restart: always
+        environment:
+            - DISABLE_ACCESS_LOGS
+        security_opt:
+            - label:type:docker_t
+        ports:
+            - "80:80"
+            - "443:443"
+        networks:
+            - nw
+        volumes:
+            - /var/run/docker.sock:/tmp/docker.sock:ro
+            - ./certs:/etc/nginx/certs
+            - ./htpasswd:/etc/nginx/htpasswd
+            - ./vhost.d:/etc/nginx/vhost.d
+            - ./conf.d:/etc/nginx/conf.d
+            - ./config/proxy.conf:/etc/nginx/proxy.conf
+            - ./config/nginx.tmpl:/app/nginx.tmpl
+            - ./html:/usr/share/nginx/html
+            - ./logs:/var/log/nginx
+
+    letsencrypt:
+        image: jrcs/letsencrypt-nginx-proxy-companion
+        container_name: nginx-proxy-letsencrypt
+        restart: always
+        environment:
+          - DEFAULT_EMAIL=${LETSENCRYPT_DEFAULT_EMAIL}
+        volumes_from:
+          - proxy
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+
+
+networks:
+    nw:
+        driver: bridge

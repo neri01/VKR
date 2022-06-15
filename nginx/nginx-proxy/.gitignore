@@ -1,0 +1,7 @@
+/logs
+/conf.d/default.conf
+/certs
+/html
+/htpasswd
+/vhost.d
+/.env

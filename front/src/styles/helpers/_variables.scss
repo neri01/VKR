@@ -1,0 +1,73 @@
+// media
+$xs: "(max-width: 767px)";
+$xl: "(max-width: 768px)";
+$sm: "(max-width: 1023px)";
+$lm: "(max-width: 1024px)";
+$md: "(max-width: 1279px)";
+$lg: "(max-width: 1920px)";
+$ll: "(max-width: 1450px)";
+
+$main-font-family: "Neue Machina", arial, helvetica, sans-serif;
+
+// Colors
+$black-true: #000;
+$white-true: #fff;
+
+// UI Colors
+$color-base: #2d2d2d;
+$color-alt: #46494a;
+$accent-base: #1a8cff;
+$action-base: #f42f3e;
+$text-base: #3b4256;
+$border-base: #e6ecf2;
+$border-alt: #d6ecf5;
+$link-base: #1964b1;
+$shadow-base: #004484;
+$site-preloader-inner: $accent-base;
+$site-preloader-bg: $white-true;
+$blue: #076ea4;
+$dark-blue: #065a7e;
+$light-blue: #e9f4f9;
+$white-blue: #d9f1fc;
+$green: #42ba58;
+$grey: #83a3b0;
+$dark-grey: #373f41;
+$light-grey: #c7dbe3;
+$nav-color-text: #373f41;
+$border-color: $light-grey;
+// backgrounds
+$bg-main: #f9fbfc;
+$bg-black: #0b0b0b;
+$bg-dark: #1c2c34;
+$bg-alt: #e5e5e5;
+$bg-content: #f3f7f9;
+$bg-footer: #1f343e;
+$main-brand-color: $green;
+$secondary-text-color: #737b7d;
+$title-color: $dark-grey;
+$border-black: #161712;
+
+$link-color: $blue;
+$link-hover-color: $green;
+$link-hover-light-color: #79a7bd;
+$link-hover-dark-color: $blue;
+$footer-color: #5c7c8b;
+
+// Size
+$outer-w: 1440px;
+$inner-pd: 75px;
+$inner-pd-ld: 40px;
+$inner-pd-tab: 25px;
+$inner-pd-mob: 15px;
+
+// Transition
+
+$base-transition: all 0.5s ease;
+
+$g-transition-duration: 0.25s;
+$g-transition-easing: ease-out;
+$g-transition: all $g-transition-duration $g-transition-easing;
+$transition-easing-alt: cubic-bezier(0.77, 0, 0.19, 1);
+
+// padding
+$padding-content: 40px 100px;
